@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffeaf2;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            top: 30px;
+        }
+        .gif1 {
+            position: absolute;
+            width: 150px;
+            height: 100px;
+            left: 30px;
+            top: 200px;
+            
+        }
+        .image:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            position: absolute;
+            margin: 15px 0 5px;
+            font-size: 2rem;
+            color: #333;
+            top: 300px;
+            left: 90px;
+          
+            
+        }
+
+        h1 span {
+            /* position: absolute; */
+            color: #ff77a9;
+            left: 0px;
+        }
+
+        p {
+            position: absolute;
+            margin: 5px 0;
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #666;
+            top: 400px;
+            left: 150px;
+        }
+
+        .button {
+            position: absolute;
+            margin-top: 40px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #e889aa;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            top: 430px;
+            left: 220px;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .music-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #ff77a9;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+
+        .anh {
+            /* position: relative; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="anh">
+        <div class="image">
+            <img src="anh1.jpg" type="image/jpg" alt="Birthday">
+        </div>
+        <div class="image2">
+            <img class="gif1" src="gif1.gif" type="image/gif" alt="Birthday">
+        </div>
+        </div>
+        <h1>Happy Birthday<br><span>Định saidepgiu!</span> (｡◕‿◕｡)</h1>
+        <p>Click the next button!! (つ◕‿◕)つ♡</p>
+        <button class="button" onclick="window.location.href='second.html'">Next!! ~ ♪</button>
+    </div>
+    <div class="music-icon">
+        <audio id="birthdayMusic" loop>
+            <source src="nhac.mp3" type="audio/mpeg">
+        </audio>
+        <span id="musicControl">🔊</span> 
+        
+    </div>
+    <script>
+        const music = document.getElementById('birthdayMusic');
+        const savedTime = localStorage.getItem('musicTime') || 0;
+        music.currentTime = savedTime;
+        setInterval(() => {
+        localStorage.setItem('musicTime', music.currentTime);
+    }, 1000);
+        music.play();
+        const musicControl = document.getElementById('musicControl');
+        musicControl.addEventListener('click', () => {
+            if (music.paused) {
+                music.play();
+                musicControl.textContent = '🔊';    
+            } else {
+                music.pause();
+                musicControl.textContent = '🔈';
+            }
+        });
+        
+
+    </script>
+</body>
+</html>

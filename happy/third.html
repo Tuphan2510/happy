@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #ffeaf2;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 4px solid #ff77a9;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            margin: 20px 0;
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        h1 span {
+            color: #ff77a9;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            color: white;
+            background-color: #e889aa;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .button.secondary {
+            background-color: #6fe7c9;
+        }
+
+        .music-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #ff77a9;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+   
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="vit-meme-dung-canh-cua-khoc.jpg" type="image/jpg" >
+        </div>
+        <h1>Awh.. Let's try again? <span>PLEASEE?</span></h1>
+        <div class="button-group">
+            <button class="button" onclick="window.location.href='first.html'">Again..?</button>
+        </div>
+    </div>
+    <div class="music-icon">
+        <audio id="birthdayMusic" loop>
+            <source src="nhac.mp3" type="audio/mpeg">
+        </audio>
+        <span id="musicControl">🔊</span> 
+        
+    </div>
+    <script>
+        const music = document.getElementById('birthdayMusic');
+        const savedTime = localStorage.getItem('musicTime') || 0;
+        music.currentTime = savedTime;
+        setInterval(() => {
+        localStorage.setItem('musicTime', music.currentTime);
+    }, 1000);
+        music.play();
+        
+        const musicControl = document.getElementById('musicControl');
+        musicControl.addEventListener('click', () => {
+            if (music.paused) {
+                music.play();
+                musicControl.textContent = '🔊';    
+            } else {
+                music.pause();
+                musicControl.textContent = '🔈';
+            }
+        });
+        
+
+    </script>
+</body>
+</html>

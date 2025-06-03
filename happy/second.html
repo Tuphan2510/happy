@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff3f7;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            background-color: none;
+            /* border-radius: 20px; */
+            box-shadow: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image {
+            position: absolute;
+            width: 250px ;
+            top: 170px;
+            left: 43%;
+            margin: 0 auto;
+            /* border-radius: 12px; */
+            overflow: hidden;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            position: absolute;
+            top: 400px;
+            left: 37%;
+            margin: 15px 0 10px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        h1 span {
+            color: #ff77a9;
+        }
+
+        .button-group {
+            position: absolute;
+            top: 450px;
+            left: 45%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #e889aa;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .button.secondary {
+            background-color: #6fe7c9;
+        }
+
+        .music-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #ff77a9;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+     
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .modal-header {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff77a9;
+        }
+
+        .modal-content {
+            margin: 15px 0;
+            text-align: center;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .modal-close {
+            background-color: #ff77a9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .modal-close:hover {
+            background-color: #ff5f8d;
+        }
+
+        #openModal {
+            margin-top: 20px;
+        }
+        .anh2 {
+            position: absolute;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            left: 29% !important;
+            top:100px;
+            scale: 0.8;
+        }
+        .anh3 {
+            position: absolute;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 12px;
+            scale: 0.3
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="anh3.png" alt="Envelope">
+        </div>
+        <div class="image3">
+            <img class="anh3" src="Tkthao219QubySticker-Tkthao219QubySticker-DiscoverShareGIFs-ezgif.com-gif-maker.gif" type="image/gif" >
+        </div>
+        <div class="image2">
+            <img class="anh2" src="This_pin_next_to_Will_is_amazing__-removebg-preview.png" type="image/jpg" >
+        </div>
+        <h1>Do you want to open it? ヾ(＂•̀_•́＂)ノ＂"</h1>
+        <div class="button-group">
+            <button class="button" id="open">Open it</button>
+            <button class="button secondary" onclick="window.location.href='third.html'">No ty</button>
+        </div>
+        
+    </div>
+    <div class="modal" id="modal" style="display: none;">
+        <div class="modal-header">Ooo.. A message (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧</div>
+        <div class="modal-content">
+            Happy Birthday (＾▽＾)<br><br>
+            Chúc em sinh nhật vui vẻ. Tuổi mới nhiều năng lượng, tự tin, luôn vui vẻ, học tập tốt và đạt được các mục tiêu mà em đề ra nè. 
+            Khi trưa qua anh mới biết là bữa ni sinh nhật em, không biết chúc gì, xem cái ni tạm cũng được haha, h đang là 3h sáng sos, không được chê nha.
+            Vậy thôi, chúc em ngày sinh nhật trọn vẹn nha.<br>
+            Hẹn gặp em ở thời điểm không xa.
+        </div>
+        <button class="modal-close" id="closeModal">Close</button>
+    </div>
+    <div class="music-icon">
+        <audio id="birthdayMusic" loop>
+            <source src="nhac.mp3" type="audio/mpeg">
+        </audio>
+        <span id="musicControl">🔊</span> 
+        
+    </div>
+    <script>
+        const music = document.getElementById('birthdayMusic');
+        const savedTime = localStorage.getItem('musicTime') || 0;
+        music.currentTime = savedTime;
+        setInterval(() => {
+        localStorage.setItem('musicTime', music.currentTime);
+    }, 1000);
+        music.play();
+        const musicControl = document.getElementById('musicControl');
+        musicControl.addEventListener('click', () => {
+            if (music.paused) {
+                music.play();
+                musicControl.textContent = '🔊';    
+            } else {
+                music.pause();
+                musicControl.textContent = '🔈';
+            }
+        });
+        
+
+    </script>
+    <script>
+        const open = document.getElementById('open');
+        const close = document.getElementById('closeModal');
+        const modal = document.getElementById('modal');
+        document.getElementById('open').addEventListener('click', () => {
+            modal.style.display = 'block';
+            modal.style.animation = 'fadeIn 0.5s ease-in-out';
+        });
+        close.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+    </script>
+</body>
+</html>
